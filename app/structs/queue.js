@@ -76,40 +76,35 @@ class Queue{
 }
 
 
-function genKeyLookup(){
+function genKeyLookup() {
   // Generate an array to lookup hard coded keys of bin ranges.
-  // For example, index 800 should have the value: '751-1000'
+  // For example, index 20 should have the value: '0-20', and so on.
   // TODO: Generate these bins based off of MMR freq data
   var key_array = [];
-  for (i = 0; i < 751; i++){
-    key_array.push('0-750');
-  }
-  for (i = 1; i < 251; i++){
-    key_array.push('751-1000');
-  }
-  for (i = 1; i < 251; i++){
-    key_array.push('10001-1250');
-  }
-  for (i = 1; i < 251; i++){
-    key_array.push('1251-1500');
+  for (i = 0; i < 5; i++) {
+    var lowerBound = i * 20;
+    var upperBound = (i + 1) * 20;
+    key_array.push(`${lowerBound + 1}-${upperBound}`);
   }
   return key_array;
 }
 
-function binRanges(){
+function binRanges() {
   // Create the bins (queues) for hard coded example MMR bin ranges.
   // TODO: Create these bins based off of MMR frequency data
-  var first_range = new Queue();
-  var second_range = new Queue();
-  var third_range = new Queue();
-  var fourth_range = new Queue();
+  var bin1 = new Queue();
+  var bin2 = new Queue();
+  var bin3 = new Queue();
+  var bin4 = new Queue();
+  var bin5 = new Queue();
 
   return {
-    '0-750': first_range,
-    '751-1000': second_range,
-    '1001-1250': third_range,
-    '1251-1500': fourth_range,
-  }
+    '1-20': bin1,
+    '21-40': bin2,
+    '41-60': bin3,
+    '61-80': bin4,
+    '81-100': bin5,
+  };
 }
 
 module.exports.Queue = Queue
