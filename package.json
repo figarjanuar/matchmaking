@@ -2,7 +2,7 @@
   "name": "matchmaking",
   "version": "1.0.0",
   "description": "Matchmaking service for Firstblood.io",
-  "main": "index.js",
+  "main": "app/server.js",
   "scripts": {
     "test": " node_modules/mocha/bin/mocha tests app/*/tests/*",
     "start": "node app/server.js"
