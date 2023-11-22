@@ -2,10 +2,9 @@
   "name": "matchmaking",
   "version": "1.0.0",
   "description": "Matchmaking service for Firstblood.io",
-  "main": "app/server.js",
+  "main": "index.js",
   "scripts": {
-    "test": " node_modules/mocha/bin/mocha tests app/*/tests/*",
-    "start": "node app/server.js"
+    "test": " node_modules/mocha/bin/mocha tests app/*/tests/*"
   },
   "author": "Jacob Duyon",
   "license": "UNLICENSED",
