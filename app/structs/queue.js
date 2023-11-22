@@ -81,9 +81,9 @@ function genKeyLookup() {
   // For example, index 20 should have the value: '0-20', and so on.
   // TODO: Generate these bins based off of MMR freq data
   var key_array = [];
-  for (i = 0; i < 5; i++) {
-    var lowerBound = i * 20;
-    var upperBound = (i + 1) * 20;
+  for (i = 0; i < 100; i++) {
+    var lowerBound = Math.floor(i / 20) * 20;
+    var upperBound = lowerBound + 20;
     key_array.push(`${lowerBound + 1}-${upperBound}`);
   }
   return key_array;
