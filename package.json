@@ -4,7 +4,8 @@
   "description": "Matchmaking service for Firstblood.io",
   "main": "index.js",
   "scripts": {
-    "test": " node_modules/mocha/bin/mocha tests app/*/tests/*"
+    "test": " node_modules/mocha/bin/mocha tests app/*/tests/*",
+    "start": "node app/server.js"
   },
   "author": "Jacob Duyon",
   "license": "UNLICENSED",
