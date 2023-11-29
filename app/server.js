@@ -2,6 +2,7 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser'); // This used to be baked into express, all I use it for is parsing the stream of POST data.
 const config = require('../config');
+const cors = require('cors');
 const hostname = config.host;
 const port = config.port;
 var url_router = require('./controllers/urls');
