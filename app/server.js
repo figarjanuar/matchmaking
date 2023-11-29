@@ -8,6 +8,7 @@ var url_router = require('./controllers/urls');
 var properties = require('./properties');
 
 server = express();
+server.use(cors());
 server.use(bodyParser.json());
 server.use('/', url_router(properties));
 server.use(function (err, req, res, next) {
