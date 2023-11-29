@@ -186,6 +186,10 @@ function updateStatusHandler(properties, ds_manager, req, res){
   // Request to tell server you are ready
   // Will remove you from matched/searching players
   // Once this is called, a player can restart matchmaking
+
+  ds_manager.removeQueuedInfo(id);
+  return res.status(200).json({response:'You may now restart matchmaking service.'})
+
   var id = req.body.id;
   if (ds_manager.pairing_manager.hasBeenDequeued(id)){
     ds_manager.removeQueuedInfo(id);
