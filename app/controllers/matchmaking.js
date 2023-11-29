@@ -174,7 +174,7 @@ function statusHandler(properties, ds_manager, req, res){
   }
 
   else if (!is_queued){
-    return res.status(404).json({response:'You were not found in our searching players pool.' });
+    return res.status(200).json({code: 1, response:'You were not found in our searching players pool.' });
   }
 
   else{
