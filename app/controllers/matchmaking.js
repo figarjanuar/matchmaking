@@ -139,10 +139,10 @@ function startMatchmakingHandler(properties, ds_manager, req, res){
   console.log('Enqueued', properties.ENQUEUED_PLAYERS.size);
   console.log('QUEUES', properties.BINNED_QUEUES);
   if (paired_id){
-    return res.status(200).json({response:'You were already queued, also, someone has matched with you'})
+    return res.status(200).json({code: 2, response:'You were already queued, also, someone has matched with you'})
   }
   if (is_queued){
-    return res.status(403).json({response: 'You are already queued. Please wait for a match to be found.'})
+    return res.status(200).json({code: 1, response: 'You are already queued. Please wait for a match to be found.'})
   }
 
   else{
